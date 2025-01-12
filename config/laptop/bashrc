@@ -1,0 +1,55 @@
+# Alias
+alias gitlog='git log --graph --oneline --all'
+alias ls='ls --color=auto'
+alias lsc='clear && ls'
+alias rm='mv --backup=numbered --target-directory=$FOLDER'
+
+# Trash
+FOLDER="$HOME/.trash"
+if [ ! -d "$FOLDER" ]; then
+    mkdir -p "$FOLDER"
+fi
+
+# Set cd to auto-ls
+function cd() {
+	new_directory="$*";
+	if [ $# -eq 0 ]; then
+		new_directory=${HOME};
+	fi;
+	builtin cd "${new_directory}" && ls
+}
+
+# Set Prompt and Colors
+function parse_git_branch() {
+	git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
+}
+
+export PS1='\[\e[33m\][\u@\h]\[\e[m\]\w\[\e[33m\]$(parse_git_branch) \[\e[m\] \n$ '
+
+# Set VIM
+EDITOR=vim
+
+# Set LS_COLORS
+eval $(dircolors -b)
+
+# Start ssh-agent if it is not already running
+if [ -z "$SSH_AGENT_PID" ]; then
+    if [ -f ~/.ssh-agent-info ]; then
+        source ~/.ssh-agent-info >/dev/null
+    fi
+
+    # Check if ssh-agent is running
+    if ! ps -p $SSH_AGENT_PID > /dev/null 2>&1; then
+        eval $(ssh-agent -s)
+        echo "export SSH_AUTH_SOCK=$SSH_AUTH_SOCK" > ~/.ssh-agent-info
+        echo "export SSH_AGENT_PID=$SSH_AGENT_PID" >> ~/.ssh-agent-info
+    fi
+fi
+
+# CUSTOM
+if [ ! -e ~/.firstrun ]; then
+	cmatrix -s
+
+	touch ~/.firstrun
+fi
+
