@@ -1,22 +1,25 @@
+# Trash
+TRASH="$HOME/.trash"
+if [ ! -d "$TRASH" ]; then
+    mkdir -p "$TRASH"
+fi
+
 # Alias
 alias gitlog='git log --graph --oneline --all'
-alias ls='ls --color=auto'
-alias lsc='clear && ls'
-alias rm='mv --backup=numbered --target-directory=$FOLDER'
-
-# Trash
-FOLDER='$HOME/.trash'
-if [ ! -d '$FOLDER' ]; then
-    mkdir -[ '$FOLDER' ]
-fi
+alias ls='ls -F --color=auto'
+alias lc='clear && ls'
+alias ll='ls -alF'
+alias la='ls -aF'
+alias rm="mv --backup=numbered --target-directory=\"$TRASH\""
+alias cltrash="/bin/rm -rf /$HOME/.trash/*"
 
 # Set cd to auto-ls
 function cd() {
         new_directory="$*";
         if [ $# -eq 0 ]; then
-                new_directory=${HOME};
+                new_directory="$HOME";
         fi;
-        builtin cd "${new_directory}" && ls --color=auto
+        builtin cd "$new_directory" && ls --color=auto
 }
 
 # Set Prompt and Colors
@@ -28,7 +31,7 @@ function new_line() {
         printf "\n$ "
 }
 
-export PS1='\[\033[1;31m\][\u@\h]\[\033[0m\]\w\[\033[1;31m\]$(parse_git_branch) \[\033[0m\] $(new_line)'
+export PS1="\[\033[1;31m\][\u@\h]\[\033[0m\]\w\[\033[1;31m\]\$(parse_git_branch) \[\033[0m\] $(new_line)"
 
 # Set VIM
 EDITOR=vim

@@ -27,13 +27,13 @@ augroup END
 set ls=2
 set statusline=%F%r
 set statusline+=%#MatchParen#
-set statusline+=%y
-set statusline+=%#ErrorMsg#
 set statusline+=\ 
 set statusline+=%{b:git_branch}
 set statusline+=\ 
 set statusline+=%#StatusLine#
-set statusline+=\[Line\ %l\/%L]
+set statusline+=\[%l\/%L]
+
+highlight MatchParen ctermbg=Black
 
 
 
