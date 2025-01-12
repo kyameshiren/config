@@ -12,6 +12,7 @@ alias ll='ls -alF'
 alias la='ls -aF'
 alias rm="mv --backup=numbered --target-directory=\"$TRASH\""
 alias cltrash="/bin/rm -rf /$HOME/.trash/*"
+alias gitforce="git add . && git commit --amend --no-edit && git push --force"
 
 # Set cd to auto-ls
 function cd() {
