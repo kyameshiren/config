@@ -1,15 +1,11 @@
+import os
 import time
 import random
 
-chars = '!@#$%^&*()<>?:"{}|_+-=]\;,./~`'
+chars = '!@#$%^&*()<>?:"{}|_+-=];,./~`abcdefghijklmnopqrstuvwxyz0123456789'
 
 while True:
-
-	word = ''.join(random.choice(chars) for i in range(211))
-	x = random.randint(0,150)
-	if x != 0:
-		time.sleep(0.05)
-		print(word)
-	else:
-		print('\n bitch \n')
-
+    terminal_width = os.get_terminal_size().columns
+    word = ''.join(random.choice(chars) for i in range(terminal_width))
+    time.sleep(0.05)
+    print(word)
