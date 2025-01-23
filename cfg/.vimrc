@@ -11,6 +11,10 @@ set wildmode=longest:full,full
 " Maps
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
+nnoremap H ^ 
+nnoremap L $ 
+onoremap H ^ 
+onoremap L $ 
 inoremap jj <ESC>
 
 " Functions
