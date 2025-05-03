@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES=(git vim tmux)
+PACKAGES=(git vim tmux timeshift)
 
 function is_installed() {
     dpkg -l | grep -qw "$1"
