@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES=(tmux btop)
+PACKAGES=(curl tmux btop)
 
 function is_installed() {
     dpkg -l | grep -qw "$1"
