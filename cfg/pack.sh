@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES=(curl tmux btop)
+PACKAGES=(curl tmux btop tealdeer)
 
 function is_installed() {
     dpkg -l | grep -qw "$1"
