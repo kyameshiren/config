@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES=(git vim tmux timeshift btop)
+PACKAGES=(tmux btop)
 
 function is_installed() {
     dpkg -l | grep -qw "$1"
@@ -19,7 +19,7 @@ for package in "${PACKAGES[@]}"; do
     fi
 done
         
-
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 
