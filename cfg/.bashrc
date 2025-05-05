@@ -36,6 +36,8 @@ export PS1="\[\033[1;31m\][\u@\h]\[\033[0m\]\w\[\033[1;31m\]\$(parse_git_branch)
 
 # Set VIM
 EDITOR=vim
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -\""
+export MANWIDTH=80
 
 # Set LS_COLORS
 eval $(dircolors -b)
