@@ -41,7 +41,7 @@ set statusline+=\
 set statusline+=%#StatusLine#
 set statusline+=\[%l\/%L]
 
-highlight MatchParen ctermbg=Black
+highlight MatchParen ctermbg=Grey
 syntax on
 set background=dark
 let base16colorspace=256
