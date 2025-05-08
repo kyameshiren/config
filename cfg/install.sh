@@ -9,3 +9,4 @@ for i in ${configs[@]}; do
         cp ./$i $home/$i
 done
 
+
