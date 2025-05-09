@@ -1,12 +1,12 @@
 " Options
 set number
-set relativenumber
 set expandtab
 set softtabstop=8
 set tabstop=8
 set shiftwidth=8
 set wildmenu
 set wildmode=longest:full,full
+set clipboard^=unnamedplus
 
 " Maps
 nnoremap <C-d> <C-d>zz
@@ -15,10 +15,13 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap H ^ 
 nnoremap L $ 
+
 onoremap H ^ 
 onoremap L $ 
+
 vnoremap H ^ 
 vnoremap L $ 
+
 inoremap jj <ESC>
 
 " Functions
@@ -41,7 +44,7 @@ set statusline+=\
 set statusline+=%#StatusLine#
 set statusline+=\[%l\/%L]
 
-highlight MatchParen ctermbg=Grey
+highlight MatchParen ctermbg=darkgrey
 syntax on
 set background=dark
 let base16colorspace=256
