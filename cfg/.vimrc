@@ -1,4 +1,6 @@
 " Options
+syntax on
+set background=dark
 set number
 set expandtab
 set softtabstop=8
@@ -42,11 +44,9 @@ set statusline+=\
 set statusline+=%{b:git_branch}
 set statusline+=\ 
 set statusline+=%#StatusLine#
-set statusline+=\[%l\/%L]
+set statusline+=%=\[%02c\/%02l\/%L]
 
 highlight MatchParen ctermbg=darkgrey
-syntax on
-set background=dark
 let base16colorspace=256
 
 call plug#begin()
