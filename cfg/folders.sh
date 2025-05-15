@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FOLDERS=(
+folders=(
     "$HOME/Documents"
     "$HOME/Downloads"
     "$HOME/Music"
@@ -10,16 +10,14 @@ FOLDERS=(
     "$HOME/Public"
 )
 
-
-
-for FOLDER in "${FOLDERS[@]}"; do
-    echo " - $FOLDER"
+for folder in "${folders[@]}"; do
+    echo " - $folder"
 done
 
 read -p  "Delete the following folders? (y/n)" confirmation
 
 if [[ "$confirmation" == "y" ]]; then
-    for folder in "${FOLDERS[@]}"; do
+    for folder in "${folders[@]}"; do
         if [ -d "$folder" ]; then
             rm -rf "$folder"
             echo "Deleted $folder"
