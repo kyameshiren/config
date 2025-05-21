@@ -1,16 +1,16 @@
 # Trash
 TRASH="$HOME/.trash"
-if [ ! -d "$TRASH" ]; then
-    mkdir -p "$TRASH"
+if [ ! -d $TRASH ]; then
+    mkdir -p $TRASH
 fi
 
 # Alias
 alias gitlog='git log --graph --oneline --all'
 alias ls='ls -F --color=auto'
-alias lc='clear && ls'
+alias lc='clear'
 alias ll='ls -alF'
 alias la='ls -aF'
-alias rm="mv --backup=numbered --target-directory=\"$TRASH\""
+alias rm="mv --backup=numbered --target-directory=$TRASH"
 alias cltrash="/bin/rm -rf /$HOME/.trash/*"
 alias gitforce="git add . && git commit --amend --no-edit && git push --force"
 

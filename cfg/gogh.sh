@@ -30,6 +30,8 @@ themes=(
         "horizon-dark"
         "liquid-carbon"
         "misterioso"
+        "monokai-pro"
+        "monokai-pro-ocatagon"
         "nanosecond"
         "nighty"
         "obsidian"
@@ -41,7 +43,12 @@ themes=(
 )
 
 export TERMINAL=gnome-terminal
-export GOGH_APPLY_SCRIPT=./apply_colors
+export GOGH_APPLY_SCRIPT=themes/apply_colors
+
+# Make dir for holding themes
+if [[ ! -d themes ]]; then
+        mkdir themes
+fi
 
 printf "\n"
 # Grab install script
@@ -51,11 +58,6 @@ if [[ ! -f themes/apply-colors.sh ]]; then
         mv apply-colors.sh themes
 else
         printf "Skipping install script...\n"
-fi
-
-# Make dir for holding themes
-if [[ ! -d themes ]]; then
-        mkdir themes
 fi
 
 printf "\n"
