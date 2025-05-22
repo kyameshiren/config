@@ -4,7 +4,7 @@ user=$(whoami)
 input=/home/${user}
 backup=/home/${user}/bak
 
-configs=(".bashrc" ".tmux.conf" ".vimrc") 
+configs=(".bashrc" ".tmux.conf" ".vimrc" ".gdbinit")
 
 if [ ! -d ~/bak ]; then
         mkdir ~/bak
