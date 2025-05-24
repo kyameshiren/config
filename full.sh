@@ -2,16 +2,16 @@
 
 printf "Removing folders...\n"
 ./cfg/folders.sh
-printf "Installing packages...\n"
+printf "\nInstalling packages...\n"
 ./cfg/pack.sh
-printf "Installing plugins...\n"
+printf "\nInstalling plugins...\n"
 ./cfg/plugins.sh
-printf "Installing config files...\n"
+printf "\nInstalling config files...\n"
 ./cfg/install.sh
-printf "Backing up config files...\n"
+printf "\nBacking up config files...\n"
 ./cfg/bak.sh
-printf "Installing color themes...\n"
+printf "\nInstalling color themes...\n"
 ./cfg/colors.sh
-printf "Applying git Settings\n"
+printf "\nApplying git Settings\n"
 ./cfg/git.sh
-printf "Done!\n"
+printf "\nDone!\n"
