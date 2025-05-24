@@ -52,7 +52,6 @@ if [[ ! -d $THEMES_DIR ]]; then
         mkdir $THEMES_DIR
 fi
 
-printf "\n"
 # Grab install script
 if [[ ! -f $THEMES_DIR/apply-colors.sh ]]; then
         printf "Grabbing install script\n"
@@ -62,7 +61,6 @@ else
         printf "Skipping install script...\n"
 fi
 
-printf "\n"
 # Install all themes in list
 printf "Grabbing themes...\n"
 for theme in ${themes[@]}; do

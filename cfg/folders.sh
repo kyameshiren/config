@@ -11,7 +11,9 @@ folders=(
 )
 
 for folder in ${folders[@]}; do
-    rm $folder
+        if [[ -f $folder ]]; then
+                rm $folder
+        fi
 done
 
 mkdir $HOME/files
