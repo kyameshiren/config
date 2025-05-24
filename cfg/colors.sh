@@ -73,6 +73,7 @@ for theme in ${themes[@]}; do
         fi
 done
 
+# Install themes
 for theme in ${themes[@]}; do
         themes/${theme}.sh
 done
