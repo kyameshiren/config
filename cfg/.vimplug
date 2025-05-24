@@ -1,6 +1,6 @@
 " Plugins
 call plug#begin()
 
-plug 'joshdick/onedark.vim'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
