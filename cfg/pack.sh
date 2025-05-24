@@ -1,6 +1,6 @@
 #!/bin/bash
 
-packages=("vim" "curl" "tmux" "btop" "tealdeer" "python3")
+packages=("vim" "curl" "tmux" "btop" "tealdeer" "python3" "timeshift")
 
 for package in ${packages[@]}; do
         if ! dpkg -s $package &> /dev/null; then
