@@ -11,6 +11,7 @@ alias lc='clear'
 alias ll='ls -alF'
 alias la='ls -aF'
 alias rm="mv --backup=numbered --target-directory=$TRASH"
+alias nuke="rm"
 alias cltrash="/bin/rm -rf /$HOME/.trash/*"
 alias gitforce="git add . && git commit --amend --no-edit && git push --force"
 

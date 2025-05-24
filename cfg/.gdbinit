@@ -1,4 +1,8 @@
 alias re = refresh
 
 layout src
-file program
+
+shell [[ -f default ]]
+if $_shell_exitcode == 0
+        file default
+end
