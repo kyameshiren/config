@@ -2,7 +2,7 @@
 
 printf "Updating system...\n"
 ./cfg/apt.sh
-printf "Removing folders...\n"
+printf "\nRemoving folders...\n"
 ./cfg/folders.sh
 printf "\nInstalling packages...\n"
 ./cfg/pack.sh
