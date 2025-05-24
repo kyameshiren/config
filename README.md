@@ -1,4 +1,4 @@
-oh look its my config files!!
+# oh look its my config files!!
 
 - full : run all scripts for fresh install
 

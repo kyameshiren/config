@@ -45,7 +45,8 @@ themes=(
 export TERMINAL=gnome-terminal
 export GOGH_APPLY_SCRIPT=themes/apply-colors.sh
 
-THEMES_DIR=cfg/themes
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+THEMES_DIR=${SCRIPT_DIR}/themes
 
 # Make dir for holding themes
 if [[ ! -d $THEMES_DIR ]]; then
@@ -55,8 +56,7 @@ fi
 # Grab install script
 if [[ ! -f $THEMES_DIR/apply-colors.sh ]]; then
         printf "Grabbing install script\n"
-        wget https://github.com/Gogh-Co/Gogh/raw/master/apply-colors.sh
-        mv apply-colors.sh $THEMES_DIR
+        wget -P $THEMES_DIR https://github.com/Gogh-Co/Gogh/raw/master/apply-colors.sh
 else
         printf "Skipping install script...\n"
 fi
@@ -66,7 +66,7 @@ printf "Grabbing themes...\n"
 for theme in ${themes[@]}; do
         if [[ ! -f $THEMES_DIR/${theme}.sh ]]; then
                 echo "Grabbing $theme"
-                wget -P themes https://github.com/Gogh-Co/Gogh/raw/master/installs/${theme}.sh
+                wget -P $THEMES_DIR https://github.com/Gogh-Co/Gogh/raw/master/installs/${theme}.sh
                 chmod +x $THEMES_DIR/${theme}.sh
         else
                 echo "$theme already in folder"
@@ -75,5 +75,5 @@ done
 
 # Install themes
 for theme in ${themes[@]}; do
-        ./$THEMES_DIR/${theme}.sh
+        bash $THEMES_DIR/${theme}.sh
 done

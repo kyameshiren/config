@@ -10,3 +10,6 @@ for package in ${packages[@]}; do
                 echo "$package already installed!"
         fi
 done
+
+tldr --update
+sudo timeshift --create --comments 'initial install'
