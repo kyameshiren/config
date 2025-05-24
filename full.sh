@@ -1,17 +1,17 @@
 #!/bin/bash
 
-echo "Removing folders..."
+printf "Removing folders...\n"
 ./cfg/folders.sh
-echo "Installing packages..."
+echo "Installing packages...\n"
 ./cfg/pack.sh
-echo "Installing plugins..."
+echo "Installing plugins...\n"
 ./cfg/plugins.sh
-echo "Installing config files..."
+echo "Installing config files...\n"
 ./cfg/install.sh
-echo "Backing up config files..."
+echo "Backing up config files...\n"
 ./cfg/bak.sh
-echo "Installing color themes..."
+echo "Installing color themes...\n"
 ./cfg/colors.sh
-echo "Applying git Settings"
+echo "Applying git Settings\n"
 ./cfg/git.sh
-echo "Done!"
+echo "Done!\n"
