@@ -62,15 +62,17 @@ fi
 
 printf "\n"
 # Install all themes in list
-printf "Installing themes...\n"
+printf "Grabbing themes...\n"
 for theme in ${themes[@]}; do
         if [[ ! -f themes/${theme}.sh ]]; then
-                echo "Installing $theme"
+                echo "Grabbing $theme"
                 wget https://github.com/Gogh-Co/Gogh/raw/master/installs/${theme}.sh
                 chmod +x ./${theme}.sh
-                ./${theme}.sh
-                mv ${theme}.sh themes
         else
-                echo "$theme already installed"
+                echo "$theme already in folder"
         fi
+done
+
+for theme in ${themes[@]}; do
+        themes/${theme}.sh
 done

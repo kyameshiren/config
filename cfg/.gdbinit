@@ -1,5 +1,4 @@
-define re
-        kill
-        dir .
-        refresh
-end
+alias re = refresh
+
+layout src
+file program
