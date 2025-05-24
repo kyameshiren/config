@@ -11,19 +11,10 @@ folders=(
 )
 
 for folder in "${folders[@]}"; do
-    echo " - $folder"
+    rm $folder
 done
 
-read -p  "Delete the following folders? (y/n)" confirmation
-
-if [[ "$confirmation" == "y" ]]; then
-    for folder in "${folders[@]}"; do
-        if [ -d "$folder" ]; then
-            rm -rf "$folder"
-            echo "Deleted $folder"
-        else
-            echo "$folder not found: Skipped"
-        fi
-    done
-    echo "Done!"
-fi
+mkdir files
+mkdir pics
+mkdir music
+mkdir vids

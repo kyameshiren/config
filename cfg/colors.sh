@@ -42,8 +42,7 @@ themes=(
         "terminal-basic"
 )
 
-export TERMINAL=gnome-terminal
-export GOGH_APPLY_SCRIPT=themes/apply_colors
+export GOGH_APPLY_SCRIPT=themes/apply-colors.sh
 
 # Make dir for holding themes
 if [[ ! -d themes ]]; then
@@ -75,5 +74,5 @@ done
 
 # Install themes
 for theme in ${themes[@]}; do
-        themes/${theme}.sh
+        ./themes/${theme}.sh
 done
