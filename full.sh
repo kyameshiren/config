@@ -1,17 +1,17 @@
 #!/bin/bash
 
 echo "Removing folders..."
-./folders.sh
+./cfg/folders.sh
 echo "Installing packages..."
-./pack.sh
+./cfg/pack.sh
 echo "Installing plugins..."
-./plugins.sh
+./cfg/plugins.sh
 echo "Installing config files..."
-./install.sh
+./cfg/install.sh
 echo "Backing up config files..."
-./bak.sh
+./cfg/bak.sh
 echo "Installing color themes..."
-./colors.sh
+./cfg/colors.sh
 echo "Applying git Settings"
-./git.sh
+./cfg/git.sh
 echo "Done!"
