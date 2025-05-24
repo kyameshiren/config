@@ -1,71 +1,51 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-packages=("dconf-cli" "uuid-runtime")
+export PROFILE_NAME="Gogh"
 
-# Make sure we have the packages for install
-for package in ${packages[@]}; do
-        if ! dpkg -s $package &> /dev/null; then
-                echo "Installing $package"
-                sudo apt install -y $package 
-        else 
-                echo "$package already installed!"
-        fi
-done
+export COLOR_01="#292D3E"           # Black (Host)
+export COLOR_02="#F07178"           # Red (Syntax string)
+export COLOR_03="#62DE84"           # Green (Command)
+export COLOR_04="#FFCB6B"           # Yellow (Command second)
+export COLOR_05="#75A1FF"           # Blue (Path)
+export COLOR_06="#F580FF"           # Magenta (Syntax var)
+export COLOR_07="#60BAEC"           # Cyan (Prompt)
+export COLOR_08="#ABB2BF"           # White
 
+export COLOR_09="#959DCB"           # Bright Black
+export COLOR_10="#F07178"           # Bright Red (Command error)
+export COLOR_11="#C3E88D"           # Bright Green (Exec)
+export COLOR_12="#FF5572"           # Bright Yellow
+export COLOR_13="#82AAFF"           # Bright Blue (Folder)
+export COLOR_14="#FFCB6B"           # Bright Magenta
+export COLOR_15="#676E95"           # Bright Cyan
+export COLOR_16="#FFFEFE"           # Bright White
 
-themes=(
-        "3024-night"
-        "afterglow"
-        "arc-dark"
-        "astrodark"
-        "azu"
-        "breath-silverfox"
-        "flat"
-        "frontend-galaxy"
-        "github-dark"
-        "gogh"
-        "google-dark"
-        "highway"
-        "horizon-dark"
-        "liquid-carbon"
-        "misterioso"
-        "nanosecond"
-        "nighty"
-        "obsidian"
-        "selenized-black"
-        "snazzy"
-        "solarized-dark-higher-contrast"
-        "srcery"
-        "terminal-basic"
-)
+export BACKGROUND_COLOR="#292D3E"   # Background
+export FOREGROUND_COLOR="#BFC7D5"   # Foreground (Text)
 
-export TERMINAL=gnome-terminal
-export GOGH_APPLY_SCRIPT=./apply_colors
+export CURSOR_COLOR="#BFC7D5" # Cursor
 
-# Grab install script
-echo "Running GOGH-CO script..."
-if [[ ! -f apply-colors.sh ]]; then
-        echo "Grabbing install script"
-        wget https://github.com/Gogh-Co/Gogh/raw/master/apply-colors.sh
+apply_theme() {
+    if [[ -e "${GOGH_APPLY_SCRIPT}" ]]; then
+      bash "${GOGH_APPLY_SCRIPT}"
+    elif [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
+      bash "${PARENT_PATH}/apply-colors.sh"
+    elif [[ -e "${SCRIPT_PATH}/apply-colors.sh" ]]; then
+      bash "${SCRIPT_PATH}/apply-colors.sh"
+    else
+      printf '\n%s\n' "Error: Couldn't find apply-colors.sh" 1>&2
+      exit 1
+    fi
+}
+
+# | ===========================================================================
+# | Apply Colors
+# | ===========================================================================
+SCRIPT_PATH="${SCRIPT_PATH:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+PARENT_PATH="$(dirname "${SCRIPT_PATH}")"
+
+if [ -z "${GOGH_NONINTERACTIVE+no}" ]; then
+    apply_theme
 else
-        echo "Skipping install script"
+    apply_theme 1>/dev/null
 fi
-
-# Make dir for holding themes
-if [[ ! -d themes ]]; then
-        mkdir themes
-fi
-
-# Install all themes in list
-for theme in ${themes[@]}; do
-        mv ${theme}.sh themes
-#        if [[ ! -f ${theme}.sh ]]; then
-#                echo "Installing $theme"
-#                wget https://github.com/Gogh-Co/Gogh/raw/master/installs/${theme}.sh
-#                chmod +x ./${theme}.sh
-#                ./${theme}.sh
-#                mv ${theme}.sh themes
-#        else
-#                echo "$theme already installed"
-#        fi
-done
