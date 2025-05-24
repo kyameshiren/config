@@ -14,7 +14,7 @@ for folder in "${folders[@]}"; do
     rm $folder
 done
 
-mkdir files
-mkdir pics
-mkdir music
-mkdir vids
+mkdir ~/files
+mkdir ~/pics
+mkdir ~/music
+mkdir ~/vids
