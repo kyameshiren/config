@@ -1,8 +1,7 @@
 #!/bin/bash
 
-user=$(whoami)
-input=/home/${user}
-backup=/home/${user}/bak
+input=$HOME
+backup=$HOME/bak
 
 configs=(".bashrc" ".tmux.conf" ".vimrc" ".gdbinit")
 

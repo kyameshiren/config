@@ -10,11 +10,11 @@ folders=(
     "$HOME/Public"
 )
 
-for folder in "${folders[@]}"; do
+for folder in ${folders[@]}; do
     rm $folder
 done
 
-mkdir ~/files
-mkdir ~/pics
-mkdir ~/music
-mkdir ~/vids
+mkdir $HOME/files
+mkdir $HOME/pics
+mkdir $HOME/music
+mkdir $HOME/vids
