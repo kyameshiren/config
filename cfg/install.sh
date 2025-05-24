@@ -8,3 +8,5 @@ configs=(".bashrc" ".tmux.conf" ".vimrc" ".gdbinit")
 for i in ${configs[@]}; do
         cp ${SCRIPT_DIR}/$i $home/$i
 done
+
+source ~/.bashrc
