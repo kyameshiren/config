@@ -42,6 +42,7 @@ themes=(
         "terminal-basic"
 )
 
+export TERMINAL=gnome-terminal
 export GOGH_APPLY_SCRIPT=themes/apply-colors.sh
 
 THEMES_DIR=cfg/themes
