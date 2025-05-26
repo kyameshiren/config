@@ -9,7 +9,7 @@ if [[ ! -d ~/bak ]]; then
 fi
 
 for i in "${configs[@]}"; do
-        last="$backup/${i}".last
+        last="$backup/${i}.last"
         current="$HOME/$i"
         if [[ -f "$last" ]]; then
                 if cmp -s "$current" "$last"; then
