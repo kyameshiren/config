@@ -1,12 +1,14 @@
 #!/bin/bash
 
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-home=$HOME
+
+bash "$SCRIPT_DIR/bak.sh"
 
 configs=(".bashrc" ".tmux.conf" ".vimrc" ".gdbinit") 
 
-for i in ${configs[@]}; do
-        cp ${SCRIPT_DIR}/$i $home/$i
+for i in "${configs[@]}"; do
+        cp "${SCRIPT_DIR}/$i" "$HOME/$i"
 done
 
 source ~/.bashrc
