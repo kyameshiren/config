@@ -9,5 +9,6 @@ configs=(".bashrc" ".tmux.conf" ".vimrc" ".gdbinit")
 
 for i in "${configs[@]}"; do
         cp "$HOME/$i" "${SCRIPT_DIR}/$i" 
+        echo "Moved $i to current to directory"
 done
 

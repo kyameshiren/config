@@ -14,10 +14,7 @@ alias rm="mv --backup=numbered --target-directory=$trash"
 alias cltrash="/usr/bin/rm -rf ${trash}/*"
 alias gitforce='git add . && git commit --amend --no-edit && git push --force-with-lease origin master'
 
-function ip4() {
-        ip -4 -o a | awk '{print $2, $4}'
-}
-
+# Fast search
 function sk() {
         find /etc /home /root /usr /var -name "$1" 2> /dev/null
 }
