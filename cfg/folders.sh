@@ -7,8 +7,6 @@ old=(
         "$HOME/Pictures"
         "$HOME/Music"
         "$HOME/Videos"
-        "$HOME/Desktop"
-        "$HOME/Downloads"
         "$HOME/Templates"
         "$HOME/Public"
 )
