@@ -50,7 +50,7 @@ done
 
 # Set XDG defaults
 if [[ -f "$userDirsConf" ]]; then
-        cp "$userDirsConf" "$HOME/bak/$(basename "$userDirsConf").bak"
+        cp "$userDirsConf" "$HOME/bak/$(basename $userDirsConf).bak"
 
         sed -i 's|^XDG_DESKTOP_DIR=.*|XDG_DESKTOP_DIR="$HOME/.desktop"|' "$userDirsConf"
         sed -i 's|^XDG_DOWNLOAD_DIR=.*|XDG_DOWNLOAD_DIR="$HOME/.downloads"|' "$userDirsConf"
@@ -62,8 +62,22 @@ if [[ -f "$userDirsConf" ]]; then
         sed -i 's|^XDG_PUBLICSHARE_DIR=.*|XDG_PUBLICSHARE_DIR="$HOME/"|' "$userDirsConf"
 fi
 
-
 source "$HOME/.config/user-dirs.dirs"
 
 
+bookmarks="$HOME/.config/gtk-3.0/bookmarks"
+
+# Set GTK bookmarks
+if [[ -f "$bookmarks" ]]; then
+
+        cp "$bookmarks" "$HOME/bak/$(basename $bookmarks).bak"
+
+        sed -i "s|file:///home/$USER/Documents|file:///home/$USER/files Files|" "$bookmarks"
+        sed -i "s|file:///home/$USER/Music|file:///home/$USER/music Music|" "$bookmarks"
+        sed -i "s|file:///home/$USER/Pictures|file:///home/$USER/pics Pictures|" "$bookmarks"
+        sed -i "s|file:///home/$USER/Videos|file:///home/$USER/vids Videos|" "$bookmarks"
+        sed -i "s|file:///home/$USER/Downloads|file:///home/$USER/.downloads Downloads|" "$bookmarks"
+
+fi
+        
 
