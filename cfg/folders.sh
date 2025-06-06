@@ -19,6 +19,7 @@ new=(
         "$HOME/.desktop"
         "$HOME/.downloads"
         "$HOME/bak"
+        "$HOME/apps"
 )
 
 # Move folders to retain data
