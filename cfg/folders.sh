@@ -14,8 +14,8 @@ old=(
 new=(
         "$HOME/files"
         "$HOME/pics"
-        "$HOME/music"
-        "$HOME/vids"
+        "$HOME/audio"
+        "$HOME/video"
         "$HOME/.desktop"
         "$HOME/.downloads"
         "$HOME/bak"
@@ -56,9 +56,9 @@ if [[ -f "$userDirsConf" ]]; then
         sed -i 's|^XDG_DESKTOP_DIR=.*|XDG_DESKTOP_DIR="$HOME/.desktop"|' "$userDirsConf"
         sed -i 's|^XDG_DOWNLOAD_DIR=.*|XDG_DOWNLOAD_DIR="$HOME/.downloads"|' "$userDirsConf"
         sed -i 's|^XDG_DOCUMENTS_DIR=.*|XDG_DOCUMENTS_DIR="$HOME/files"|' "$userDirsConf"
-        sed -i 's|^XDG_MUSIC_DIR=.*|XDG_MUSIC_DIR="$HOME/music"|' "$userDirsConf"
+        sed -i 's|^XDG_MUSIC_DIR=.*|XDG_MUSIC_DIR="$HOME/audio"|' "$userDirsConf"
         sed -i 's|^XDG_PICTURES_DIR=.*|XDG_PICTURES_DIR="$HOME/pics"|' "$userDirsConf"
-        sed -i 's|^XDG_VIDEOS_DIR=.*|XDG_VIDEOS_DIR="$HOME/vids"|' "$userDirsConf"
+        sed -i 's|^XDG_VIDEOS_DIR=.*|XDG_VIDEOS_DIR="$HOME/video"|' "$userDirsConf"
         sed -i 's|^XDG_TEMPLATES=.*|XDG_TEMPLATES_DIR="$HOME/"|' "$userDirsConf"
         sed -i 's|^XDG_PUBLICSHARE_DIR=.*|XDG_PUBLICSHARE_DIR="$HOME/"|' "$userDirsConf"
 fi
@@ -74,9 +74,9 @@ if [[ -f "$bookmarks" ]]; then
         cp "$bookmarks" "$HOME/bak/$(basename $bookmarks).bak"
 
         sed -i "s|file:///home/$USER/Documents|file:///home/$USER/files Files|" "$bookmarks"
-        sed -i "s|file:///home/$USER/Music|file:///home/$USER/music Music|" "$bookmarks"
+        sed -i "s|file:///home/$USER/Music|file:///home/$USER/audio Music|" "$bookmarks"
         sed -i "s|file:///home/$USER/Pictures|file:///home/$USER/pics Pictures|" "$bookmarks"
-        sed -i "s|file:///home/$USER/Videos|file:///home/$USER/vids Videos|" "$bookmarks"
+        sed -i "s|file:///home/$USER/Videos|file:///home/$USER/video Videos|" "$bookmarks"
         sed -i "s|file:///home/$USER/Downloads|file:///home/$USER/.downloads Downloads|" "$bookmarks"
 
 fi
