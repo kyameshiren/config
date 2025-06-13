@@ -45,6 +45,10 @@ themes=(
 export TERMINAL=gnome-terminal
 export GOGH_APPLY_SCRIPT=themes/apply-colors.sh
 
+# Fix default profile in Gnome
+uuid=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
+gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$uuid/" visible-name 'InitializedProfile'
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 THEMES_DIR="${SCRIPT_DIR}/themes"
 
