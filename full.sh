@@ -1,19 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CFG_DIR="${SCRIPT_DIR}/cfg"
 
 printf "Updating system...\n"
-./cfg/apt.sh
+"${CFG_DIR}/apt.sh"
 printf "\nRemoving folders...\n"
-./cfg/folders.sh
+"${CFG_DIR}/folders.sh"
 printf "\nInstalling packages...\n"
-./cfg/pack.sh
+"${CFG_DIR}/pack.sh"
 printf "\nInstalling plugins...\n"
-./cfg/plugins.sh
+"${CFG_DIR}/plugins.sh"
 printf "\nInstalling config files...\n"
-./cfg/install.sh
+"${CFG_DIR}/install.sh"
 printf "\nBacking up config files...\n"
-./cfg/bak.sh
+"${CFG_DIR}/bak.sh"
 printf "\nInstalling color themes...\n"
-./cfg/colors.sh
+"${CFG_DIR}/colors.sh"
 printf "\nApplying git settings\n"
-./cfg/git.sh
+"${CFG_DIR}/git.sh"
+printf "\n__CURRENT COLORS__\n"
+"${CFG_DIR}/dircolors.sh"
+printf "^^CURRENT COLORS^^\n"
 printf "\nDone!\n"

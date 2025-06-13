@@ -6,6 +6,8 @@
 # A nice description of the colour codes is here:
 #     http://askubuntu.com/a/466203/309899
 
+eval $(dircolors -b)
+
 IFS=:
 for SET in $LS_COLORS
 do
