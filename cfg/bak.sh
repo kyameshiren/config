@@ -13,7 +13,7 @@ for i in "${configs[@]}"; do
         current="$HOME/$i"
 
         if [[ ! -f "$current" ]]; then
-                echo "error: No $current to backup!"
+                echo "ERROR: no $current to backup"
                 continue
         fi
 
@@ -21,9 +21,9 @@ for i in "${configs[@]}"; do
                 timestamp="$(date +%F_%H-%M)"
                 cp "$current" "${backup}/${i}_$timestamp"
                 cp "$current" "$last"
-                echo "Backup $current to ${backup}/${i}_$timestamp"
+                echo "INFO: backup $current to ${backup}/${i}_$timestamp"
         else
-                echo "error: No changes to $current since last backup!"
+                echo "ERROR: no changes to $current since last backup"
         fi
 done
 

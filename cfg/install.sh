@@ -9,7 +9,7 @@ configs=(".bashrc" ".tmux.conf" ".vimrc" ".gdbinit")
 
 for i in "${configs[@]}"; do
         cp "${SCRIPT_DIR}/$i" "$HOME/$i"
-        echo "Moved $i to home directory"
+        echo "INFO: moved $i to home directory"
 done
 
 source ~/.bashrc

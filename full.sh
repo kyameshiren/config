@@ -22,4 +22,8 @@ printf "\nApplying git settings\n"
 printf "\n__CURRENT COLORS__\n"
 "${CFG_DIR}/dircolors.sh"
 printf "^^CURRENT COLORS^^\n"
+
+tldr --update
+sudo timeshift --create --comments 'initial install'
+
 printf "\nDone!\n"

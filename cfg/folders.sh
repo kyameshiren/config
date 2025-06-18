@@ -36,7 +36,7 @@ for dir in "${old[@]}"; do
         if [[ -d "$dir" ]]; then
                 rmdir "$dir"
         else
-                echo "$dir not found!"
+                echo "ERROR: $dir not found"
         fi
 done
 
@@ -45,7 +45,7 @@ for dir in "${new[@]}"; do
         if [[ ! -d "$dir" ]]; then
                 mkdir -p "$dir"
         else
-                echo "$dir already exists!"
+                echo "ERROR: $dir already exists"
         fi
 done
 

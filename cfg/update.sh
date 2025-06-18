@@ -9,6 +9,6 @@ configs=(".bashrc" ".tmux.conf" ".vimrc" ".gdbinit")
 
 for i in "${configs[@]}"; do
         cp "$HOME/$i" "${SCRIPT_DIR}/$i" 
-        echo "Replaced $i in current directory"
+        echo "INFO: replaced $i in current directory"
 done
 

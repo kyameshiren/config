@@ -2,14 +2,14 @@
 
 packages=("dconf-cli" "uuid-runtime")
 
-echo "Checking dependencies..."
+echo "INFO: checking dependencies"
 # Make sure we have the packages for install
 for package in "${packages[@]}"; do
         if ! dpkg -s "$package" &> /dev/null; then
-                echo "Installing $package"
+                echo "INFO: installing $package"
                 sudo apt install -y "$package"
         else 
-                echo "$package already installed!"
+                echo "ERROR: $package already installed"
         fi
 done
 
@@ -60,21 +60,21 @@ fi
 
 # Grab install script
 if [[ ! -f "$THEMES_DIR/apply-colors.sh" ]]; then
-        printf "Grabbing install script\n"
+        printf "INFO: grabbing install script\n"
         wget -P "$THEMES_DIR" "https://github.com/Gogh-Co/Gogh/raw/master/apply-colors.sh"
 else
-        printf "Skipping install script...\n"
+        printf "INFO: skipping install script...\n"
 fi
 
 # Install all themes in list
-printf "Grabbing themes...\n"
+printf "INFO: grabbing themes...\n"
 for theme in "${themes[@]}"; do
         if [[ ! -f "$THEMES_DIR/${theme}.sh" ]]; then
-                echo "Grabbing $theme"
+                echo "INFO: grabbing $theme"
                 wget -P "$THEMES_DIR" "https://github.com/Gogh-Co/Gogh/raw/master/installs/${theme}.sh"
                 chmod +x "$THEMES_DIR/${theme}.sh"
         else
-                echo "$theme already in folder"
+                echo "ERROR: $theme already in folder"
         fi
 done
 
