@@ -9,6 +9,7 @@ set shiftwidth=8
 set wildmenu
 set wildmode=longest:full,full
 set clipboard^=unnamedplus
+set iskeyword-=-
 
 " Maps
 nnoremap <C-d> <C-d>zz
