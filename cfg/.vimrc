@@ -49,27 +49,3 @@ set statusline+=%=\[%02c\/%02l\/%L]
 
 highlight MatchParen ctermbg=darkgrey
 let base16colorspace=256
-
-call plug#begin()
-
-Plug 'joshdick/onedark.vim'
-
-call plug#end()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
