@@ -13,12 +13,6 @@ for package in "${packages[@]}"; do
         fi
 done
 
-# Add default profile for fresh install
-if [[ -z $(dconf list /org/gnome/terminal/) ]];then
-        uuid=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d "'")
-        gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$uuid/" visible-name 'InitializedProfile'
-fi
-
 themes=(
         "3024-night"
         "afterglow"
@@ -47,7 +41,7 @@ themes=(
         "terminal-basic"
 )
 
-export TERMINAL=gnome-terminal
+export TERMINAL="$(ps -o comm= -p $(ps -o ppid= -p $$))"
 export GOGH_APPLY_SCRIPT=themes/apply-colors.sh
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -62,8 +56,6 @@ fi
 if [[ ! -f "$THEMES_DIR/apply-colors.sh" ]]; then
         printf "INFO: grabbing install script\n"
         wget -P "$THEMES_DIR" "https://github.com/Gogh-Co/Gogh/raw/master/apply-colors.sh"
-else
-        printf "INFO: skipping install script...\n"
 fi
 
 # Install all themes in list
@@ -73,12 +65,6 @@ for theme in "${themes[@]}"; do
                 echo "INFO: grabbing $theme"
                 wget -P "$THEMES_DIR" "https://github.com/Gogh-Co/Gogh/raw/master/installs/${theme}.sh"
                 chmod +x "$THEMES_DIR/${theme}.sh"
-        else
-                echo "ERROR: $theme already in folder"
         fi
-done
-
-# Install themes
-for theme in "${themes[@]}"; do
         bash "$THEMES_DIR/${theme}.sh"
 done
