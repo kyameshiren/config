@@ -10,12 +10,3 @@ for package in "${packages[@]}"; do
                 echo "INFO: $package already installed"
         fi
 done
-
-if ! dpkg -s "librewolf" &> /dev/null; then
-        sudo apt update && sudo apt install extrepo -y
-        sudo extrepo enable librewolf
-        sudo apt update && sudo apt install librewolf -y
-        echo "INFO: installing librewolf"
-else
-        echo "INFO: librewolf already installed"
-fi
