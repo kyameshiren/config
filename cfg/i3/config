@@ -184,7 +184,7 @@ bindsym $mod+mod1+l move right
 bindsym $mod+control+j split v; exec kitty
 
 # split in horizontal orientation
-bindsym $mod+control+k split h; exec kitty
+bindsym $mod+control+l split h; exec kitty
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
