@@ -41,5 +41,5 @@ export PS1
 
 # Set VIM
 export EDITOR=vim
-export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist noma' -\""
+export MANPAGER=less
 export MANWIDTH=80
