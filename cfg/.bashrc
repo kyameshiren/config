@@ -7,14 +7,11 @@ fi
 # Alias
 alias gl='git log --graph --oneline --all'
 alias ls='ls -F --color=auto'
-alias lc='clear'
 alias ll='ls -lhF'
 alias la='ls -alhF'
-alias ren='mv'
 alias rm="mv --backup=numbered --target-directory=$trash"
 alias cltrash="/usr/bin/rm -rf ${trash}/*"
 alias gitforce='git add . && git commit --amend --no-edit && git push --force-with-lease origin master'
-alias portal='ssh general@gaia'
 
 # Fast search
 function sk() {

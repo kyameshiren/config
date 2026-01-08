@@ -1,6 +1,0 @@
-## Plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-yank'
-
-## KEEP AT BOTTOM
-run '~/.tmux/plugins/tpm/tpm'
