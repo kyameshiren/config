@@ -7,6 +7,7 @@ fi
 # Alias
 alias gl='git log --graph --oneline --all'
 alias ls='ls -F --color=auto'
+alias lc='clear'
 alias ll='ls -lhF'
 alias la='ls -alhF'
 alias rm="mv --backup=numbered --target-directory=$trash"
@@ -43,3 +44,15 @@ export PS1
 export EDITOR=vim
 export MANPAGER=less
 export MANWIDTH=80
+
+# Configure SSH-Agent
+export SSH_AUTH_SOCK="/run/user/$(id -u)/ssh-agent.socket"
+
+
+
+
+
+
+
+
+
