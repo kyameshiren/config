@@ -7,7 +7,6 @@ bash "$SCRIPT_DIR"/bak.sh
 configs=(".bashrc" ".tmux.conf" ".vimrc" ".gdbinit") 
 
 for i in "${configs[@]}"; do
-        cp "$HOME/$i" "${SCRIPT_DIR}/$i" 
+        cp "$HOME/$i" "${SCRIPT_DIR}/${i#.}" 
         echo "INFO: replaced $i in current directory"
 done
-

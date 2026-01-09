@@ -5,10 +5,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 bash "$SCRIPT_DIR/bak.sh"
 
-configs=(".bashrc" ".tmux.conf" ".vimrc" ".gdbinit") 
+configs=("bashrc" "tmux.conf" "vimrc" "gdbinit") 
 
 for i in "${configs[@]}"; do
-        cp "${SCRIPT_DIR}/$i" "$HOME/$i"
+        cp "${SCRIPT_DIR}/$i" "$HOME/.$i"
         echo "INFO: moved $i to home directory"
 done
 
