@@ -1,5 +1,3 @@
-# oh look its my config files!!
-
 - full      : run all scripts for fresh install
 - bak       : backup configs
 - install   : copies configs from repo to ~/
