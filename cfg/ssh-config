@@ -1,0 +1,13 @@
+Host git-kyameshiren
+        Hostname github.com
+        User git
+        IdentityFile ~/.ssh/[enter pub key here]
+        IdentitiesOnly yes
+        AddKeysToAgent yes
+
+Host git-crensing7
+        Hostname github.com
+        User git
+        IdentityFile ~/.ssh/[enter pub key here]
+        IdentitiesOnly yes
+        AddKeysToAgent yes
