@@ -26,10 +26,10 @@ vim.keymap.set('n', '<leader>e', '<cmd>tabprevious<cr>'  )
 vim.keymap.set('n', '<leader>h', '<cmd>nohlsearch<cr>')
 
 -- Oil
-vim.keymap.set('n', '1', '<cmd>Oil<cr>')
+vim.keymap.set('n', '<leader>1', '<cmd>Oil<cr>')
 
 -- Telescope
-vim.keymap.set('n', '4', '<cmd>Telescope find_files hidden=true no_ignore=true<cr>')
+vim.keymap.set('n', '<leader>4', '<cmd>Telescope find_files hidden=true no_ignore=true<cr>')
 require("telescope").setup({
         defaults = {
                 vimgrep_arguments = {
@@ -44,8 +44,8 @@ require("telescope").setup({
                 },
         },
 })
-vim.keymap.set('n', '5', '<cmd>Telescope live_grep<cr>')
+vim.keymap.set('n', '<leader>5', '<cmd>Telescope live_grep<cr>')
 
 -- Terminal
-vim.keymap.set('n', '<C-0>', '<cmd>terminal<cr>')
-vim.keymap.set('t', '<C-9>', '<C-\\><C-n>')
+vim.keymap.set('n', '<leader>0', '<cmd>terminal<cr>')
+vim.keymap.set('t', '<leader>9', '<C-\\><C-n>')
