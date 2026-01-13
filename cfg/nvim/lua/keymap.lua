@@ -16,7 +16,12 @@ vim.keymap.set('n', '<leader><', '<cmd>vertical resize 35<cr>')
 vim.keymap.set('n', '<leader>>', '<cmd>vertical resize 100<cr>')
 vim.keymap.set('n', '<leader>m', '<cmd>vsplit<cr>')
 vim.keymap.set('n', '<leader>j', '<C-w>w')
-vim.keymap.set('n', '<leader>p', '<C-w>z')
+vim.keymap.set('n', '<leader>b', '<C-w>z')
+
+vim.keymap.set('n', '<leader>t', '<cmd>tabnew<cr>'  )
+vim.keymap.set('n', '<leader>w', '<cmd>tabclose<cr>'  )
+vim.keymap.set('n', '<leader>r', '<cmd>tabnext<cr>'  )
+vim.keymap.set('n', '<leader>e', '<cmd>tabprevious<cr>'  )
 
 vim.keymap.set('n', '<leader>h', '<cmd>nohlsearch<cr>')
 
