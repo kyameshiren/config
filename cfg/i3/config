@@ -142,10 +142,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+        bindsym l resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym j resize shrink height 5 px or 5 ppt
+        bindsym h resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
 #        bindsym Left resize shrink width 10 px or 10 ppt
@@ -190,7 +190,6 @@ bindsym $mod+control+l split h; exec kitty
 bindsym $mod+f fullscreen toggle
 
 # CUSTOM
-exec_always --no-startup-id xset r rate 200 30
 focus_follows_mouse no
 
 for_window [class=".*"] border pixel 2
@@ -198,5 +197,4 @@ gaps inner 10
 gaps outer 0
 
 client.focused #ff355b #ff355b #ff355b #ff355b #ff355b 
-
-default_orientation horizontal
+exec_always --no-startup-id xset r rate 200 30
