@@ -1,5 +1,9 @@
 vim.g.mapleader = ' '
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.timeout = true
+vim.opt.timeoutlen = 200
+vim.opt.ttimeout = true
+vim.opt.ttimeoutlen = 200
 
 vim.keymap.set('i', 'jk', '<ESC>')
 
@@ -12,6 +16,7 @@ vim.keymap.set('n', 'N', 'Nzz')
 vim.keymap.set({'n', 'v'}, 'H', '^')
 vim.keymap.set({'n', 'v'}, 'L', '$')
 
+-- Window
 vim.keymap.set('n', '<leader><', '<cmd>vertical resize 35<cr>')
 vim.keymap.set('n', '<leader>>', '<cmd>vertical resize 100<cr>')
 vim.keymap.set('n', '<leader>m', '<cmd>vsplit<cr>')
