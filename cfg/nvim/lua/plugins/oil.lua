@@ -14,6 +14,10 @@ return {
                 view_options = {
                         show_hidden = true,
                 },
+                win_options = {
+                        conceallevel = 0,
+                        concealcursor = "",
+                },
         },
         dependencies = { { 'nvim-mini/mini.icons', opts = {} } },
         lazy = false,
